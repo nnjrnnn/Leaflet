@@ -1,0 +1,96 @@
+<html>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+  <title>My first Leaflet</title>
+  <!---Link leaflet css and javascript--->
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.4.0/dist/leaflet.css">
+  <script src="https://unpkg.com/leaflet@1.4.0/dist/leaflet.js"></script>
+</head>
+<body>
+<body bgcolor="#6495ED"></body>
+<center><h1>🎄𝑳𝒂𝒏𝒅𝒎𝒂𝒓𝒌𝒔 𝒐𝒇 𝑵𝒂𝒌𝒉𝒐𝒏 𝑹𝒂𝒕𝒄𝒉𝒂𝒔𝒊𝒎𝒂🎄</h1></center>
+<hr size = 6 noshade color="#191970">
+  <div id="map" style="width: 1800px; height: 600px"></div>
+  <!--- set center and Link map--->
+<script>
+
+  var map = L.map('map').setView([14.56268,101.85412],10);
+  mapLink ='<a href="http://openstreetmap.org">OpenStreetMap</a>';
+  L.tileLayer(
+    'http://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+     attribution: 'Map data &copy; ' + mapLink,
+     maxZoom: 18,
+    }).addTo(map);
+    var greenIcon = L.icon({
+    iconUrl: 'https://o.remove.bg/downloads/d36b9c38-653d-4e46-a7d7-f90aabe61839/location-removebg-preview.png',
+
+    iconSize:     [40, 45], // size of the icon
+    iconAnchor:   [15, 54], // point of the icon which will correspond to marker's location
+    popupAnchor:  [-3, -76] // point from which the popup should open relative to the iconAnchor
+});
+    var marker = L.marker([14.4577, 101.3712],
+  {
+    icon: greenIcon,
+    draggable:true,
+    title:'เขาใหญ่',
+    opacity:1.5
+  }
+)
+  .addTo(map)
+  .bindPopup("<b>อุทยานแห่งชาติเขาใหญ่</b>")
+  .openPopup();
+
+  var marker = L.marker([14.5389, 101.4000],
+{
+  icon: greenIcon,
+  draggable:true,
+  title:'Palio',
+  opacity:1.5
+}
+)
+.addTo(map)
+.bindPopup("<b>Palio Khaoyai</b>")
+.openPopup();
+
+var marker = L.marker([14.5383, 101.3368],
+{
+icon: greenIcon,
+draggable:true,
+title:'Primo Piazza',
+opacity:1.5
+}
+)
+.addTo(map)
+.bindPopup("<b>Primo Piazza</b>")
+.openPopup();
+
+var marker = L.marker([14.8513, 101.5670],
+{
+icon: greenIcon,
+draggable:true,
+title:'เขายายเที่ยง',
+opacity:1.5
+}
+)
+.addTo(map)
+.bindPopup("<b>Khao Yai Thiang</b>")
+.openPopup();
+
+var marker = L.marker([14.8662, 101.5601],
+{
+icon: greenIcon,
+draggable:true,
+title:'เขื่อนลำตะคลอง',
+opacity:1.5
+}
+)
+.addTo(map)
+.bindPopup("<b>Lam takhong Dam</b>")
+.openPopup();
+
+</script>
+</body>
+</html>
